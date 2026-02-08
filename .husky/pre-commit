@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "🔍 Running lint-staged..."
+pnpx lint-staged
