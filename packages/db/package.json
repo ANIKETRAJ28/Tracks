@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "migrate": "node-pg-migrate",
-    "typecheck": "tsc --noEmit"
+    "build": "rm -rf dist && tsc -b",
+    "typecheck": "tsc --noEmit",
+    "migrate": "node-pg-migrate"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,9 @@
     "pgtools": "^1.0.1"
   },
   "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
     "@types/dotenv": "^8.2.3",
     "@types/pg": "^8.16.0"
   }
