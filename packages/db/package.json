@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
     "migrate": "node-pg-migrate",
     "typecheck": "tsc --noEmit"
   },
