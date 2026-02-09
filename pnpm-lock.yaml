@@ -62,6 +62,15 @@ importers:
         specifier: ^8.18.0
         version: 8.18.0
     devDependencies:
+      "@repo/eslint-config":
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      "@repo/prettier-config":
+        specifier: workspace:*
+        version: link:../../packages/prettier-config
+      "@repo/tsconfig":
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       "@types/express":
         specifier: ^5.0.6
         version: 5.0.6
@@ -87,6 +96,15 @@ importers:
       "@eslint/js":
         specifier: ^9.39.1
         version: 9.39.2
+      "@repo/eslint-config":
+        specifier: workspace:*
+        version: link:../../packages/eslint-config
+      "@repo/prettier-config":
+        specifier: workspace:*
+        version: link:../../packages/prettier-config
+      "@repo/tsconfig":
+        specifier: workspace:*
+        version: link:../../packages/tsconfig
       "@types/node":
         specifier: ^24.10.1
         version: 24.10.12
@@ -136,6 +154,15 @@ importers:
         specifier: ^1.0.1
         version: 1.0.1
     devDependencies:
+      "@repo/eslint-config":
+        specifier: workspace:*
+        version: link:../eslint-config
+      "@repo/prettier-config":
+        specifier: workspace:*
+        version: link:../prettier-config
+      "@repo/tsconfig":
+        specifier: workspace:*
+        version: link:../tsconfig
       "@types/dotenv":
         specifier: ^8.2.3
         version: 8.2.3
@@ -146,6 +173,20 @@ importers:
   packages/eslint-config: {}
 
   packages/prettier-config: {}
+
+  packages/tsconfig: {}
+
+  packages/types:
+    devDependencies:
+      "@repo/eslint-config":
+        specifier: workspace:*
+        version: link:../eslint-config
+      "@repo/prettier-config":
+        specifier: workspace:*
+        version: link:../prettier-config
+      "@repo/tsconfig":
+        specifier: workspace:*
+        version: link:../tsconfig
 
 packages:
   "@babel/code-frame@7.29.0":

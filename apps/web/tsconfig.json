@@ -1,4 +1,7 @@
 {
-  "files": [],
-  "references": [{ "path": "./tsconfig.app.json" }, { "path": "./tsconfig.node.json" }]
+  "extends": "@repo/tsconfig/react",
+  "compilerOptions": {
+    "types": ["vite/client"]
+  },
+  "include": ["src"]
 }

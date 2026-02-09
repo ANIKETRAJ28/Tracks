@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "rm -rf && tsc -b && vite build",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },
@@ -15,6 +15,9 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/prettier-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.5",
     "@types/react-dom": "^19.2.3",
