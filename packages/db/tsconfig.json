@@ -1,7 +1,16 @@
 {
   "extends": "@repo/tsconfig/base",
   "compilerOptions": {
-    "outDir": "dist"
+    "rootDir": "src",
+    "outDir": "dist",
+
+    "declaration": true,
+    "declarationMap": true,
+
+    "module": "commonjs",
+    "moduleResolution": "node",
+
+    "target": "es2020"
   },
   "include": ["src"]
 }
