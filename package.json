@@ -5,8 +5,11 @@
   "private": true,
   "main": "index.js",
   "lint-staged": {
-    "*.{js,ts}": [
+    "*.{js,ts,tsx}": [
       "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,yml,yaml,md}": [
       "prettier --write"
     ]
   },

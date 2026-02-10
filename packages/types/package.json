@@ -15,5 +15,8 @@
     "@repo/eslint-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
     "@repo/tsconfig": "workspace:*"
+  },
+  "exports": {
+    ".": "./src/index.ts"
   }
 }
