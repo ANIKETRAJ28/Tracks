@@ -41,10 +41,10 @@ jobs:
       - name: Eslint Check
         run: pnpm run lint
 
-      # Typecheck only changed packages
-      - name: Typecheck changed
-        run: pnpm -r --filter "...[origin/${{ github.base_ref || 'main' }}]" --if-present run typecheck
+      # Build dependents
+      - name: Build all workspace packages
+        run: pnpm -r build
 
-      # Build only changed + dependents
-      - name: Build changed
-        run: pnpm -r --filter "...[origin/${{ github.base_ref || 'main' }}]" build
+      # Typecheck packages
+      - name: Typecheck
+        run: pnpm -r typecheck
