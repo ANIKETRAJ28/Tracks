@@ -12,15 +12,15 @@ export const up = (pgm) => {
   pgm.sql(`
     CREATE TABLE elements (
       id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-      tag_id UUID REFERENCES tags(id),
-      slide_id UUID REFERENCES slides(id) ON DELETE CASCADE,
-      track_id UUID REFERENCES tracks(id) ON DELETE CASCADE,
+      tag_id UUID NOT NULL REFERENCES tags(id),
+      slide_id UUID NOT NULL REFERENCES slides(id) ON DELETE CASCADE,
+      track_id UUID NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
       parent_id UUID REFERENCES elements(id),
       position NUMERIC(20,10) NOT NULL,
       depth INT DEFAULT 0,
       content JSONB,
-      decorator JSONB,
-      style JSONB,
+      decorator JSONB DEFAULT '{}'::jsonb,
+      style JSONB DEFAULT '{}'::jsonb,
       metadata JSONB DEFAULT '{}'::jsonb,
       created_at TIMESTAMP DEFAULT now(),
       updated_At TIMESTAMP DEFAULT now()

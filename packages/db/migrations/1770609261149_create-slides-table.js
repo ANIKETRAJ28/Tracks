@@ -12,7 +12,7 @@ export const up = (pgm) => {
   pgm.sql(`
     CREATE TABLE slides (
       id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-      track_id UUID REFERENCES tracks(id),
+      track_id UUID NOT NULL REFERENCES tracks(id) ON DELETE CASCADE,
       title TEXT NOT NULL,
       position NUMERIC(20,10) NOT NULL,
       created_at TIMESTAMP DEFAULT now(),
