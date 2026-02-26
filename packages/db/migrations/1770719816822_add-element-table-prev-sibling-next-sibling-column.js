@@ -10,11 +10,9 @@ export const shorthands = undefined;
  */
 export const up = (pgm) => {
   pgm.sql(`
-    CREATE TABLE tags (
-      id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-      name TEXT UNIQUE NOT NULL,
-      metadata JSONB
-    );
+    ALTER TABLE elements
+    ADD COLUMN prev_sibling_id UUID REFERENCES elements(id),
+    ADD COLUMN next_sibling_id UUID REFERENCES elements(id);
   `);
 };
 
@@ -24,5 +22,9 @@ export const up = (pgm) => {
  * @returns {Promise<void> | void}
  */
 export const down = (pgm) => {
-  pgm.sql(`DROP TABLE IF EXISTS tags;`);
+  pgm.sql(`
+    ALTER TABLE elements
+    DROP COLUMN prev_sibling_id,
+    DROP COLUMN next_sibling_id;
+  `);
 };
